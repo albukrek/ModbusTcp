@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="684.0" style="-fx-background-color: GREY;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+   <children>
+      <Pane layoutX="11.0" layoutY="12.0" onKeyPressed="#clearMassage" onMouseClicked="#clearMassage" style="-fx-background-color: ffffff;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="12.0">
+         <children>
+            <Label layoutX="179.0" layoutY="55.0" text="Wellcome To LIBRA">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="userTxt" focusColor="#448947" labelFloat="true" layoutX="182.0" layoutY="140.0" onKeyPressed="#clearMassage" onMouseClicked="#clearMassage" onZoom="#clearMassage" prefHeight="25.0" prefWidth="345.0" promptText="User Name" />
+            <JFXPasswordField fx:id="passTxt" focusColor="#448947" labelFloat="true" layoutX="182.0" layoutY="194.0" onAction="#clearMassage" onKeyPressed="#clearMassage" onMouseClicked="#clearMassage" prefHeight="25.0" prefWidth="345.0" promptText="Password" />
+            <JFXButton buttonType="RAISED" defaultButton="true" layoutX="429.0" layoutY="271.0" onAction="#loginToMain" prefHeight="35.0" prefWidth="100.0" ripplerFill="#030303" style="-fx-background-color: GREEN;" text="Login" textFill="#f5f4f4">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font></JFXButton>
+            <JFXButton fx:id="exitBtn" buttonType="RAISED" defaultButton="true" layoutX="178.0" layoutY="271.0" onAction="#appExit" prefHeight="35.0" prefWidth="100.0" ripplerFill="#030303" style="-fx-background-color: RED;" text="Exit" textFill="#f5f4f4">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <Text fx:id="massageTxt" fill="#f50606" fontSmoothingType="LCD" layoutX="221.0" layoutY="353.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="220.00000190734863">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </Text>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Pane>
+      <ImageView fitHeight="111.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="11.0">
+         <image>
+            <Image url="@libra.png" />
+         </image>
+         <viewport>
+            <Rectangle2D minX="122.0" minY="122.0" />
+         </viewport>
+      </ImageView>
+   </children>
+</AnchorPane>

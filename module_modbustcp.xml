@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_modbustcp" default="compile.module.modbustcp">
+  <dirname property="module.modbustcp.basedir" file="${ant.file.module_modbustcp}"/>
+  
+  <property name="module.jdk.home.modbustcp" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.modbustcp" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.modbustcp" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.modbustcp" value="-encoding UTF-8 -source 8 -target 8 ${compiler.args}"/>
+  
+  <property name="modbustcp.output.dir" value="${module.modbustcp.basedir}/out/production/ModbusTcp"/>
+  <property name="modbustcp.testoutput.dir" value="${module.modbustcp.basedir}/out/test/ModbusTcp"/>
+  
+  <path id="modbustcp.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="modbustcp.module.production.classpath">
+    <path refid="${module.jdk.classpath.modbustcp}"/>
+    <path refid="library.derbyembeddeddb.classpath"/>
+    <path refid="library.poi.classpath"/>
+    <path refid="library.slf4j-api-1.7.21.classpath"/>
+    <path refid="library.jfoenix.classpath"/>
+    <path refid="library.j2mod-2.3.3.classpath"/>
+    <path refid="library.fontawesomefx.classpath"/>
+    <path refid="library.javolution-core-java-6.0.0.classpath"/>
+  </path>
+  
+  <path id="modbustcp.runtime.production.module.classpath">
+    <pathelement location="${modbustcp.output.dir}"/>
+    <path refid="library.derbyembeddeddb.classpath"/>
+    <path refid="library.poi.classpath"/>
+    <path refid="library.slf4j-api-1.7.21.classpath"/>
+    <path refid="library.jfoenix.classpath"/>
+    <path refid="library.j2mod-2.3.3.classpath"/>
+    <path refid="library.fontawesomefx.classpath"/>
+    <path refid="library.javolution-core-java-6.0.0.classpath"/>
+  </path>
+  
+  <path id="modbustcp.module.classpath">
+    <path refid="${module.jdk.classpath.modbustcp}"/>
+    <pathelement location="${modbustcp.output.dir}"/>
+    <path refid="library.derbyembeddeddb.classpath"/>
+    <path refid="library.poi.classpath"/>
+    <path refid="library.slf4j-api-1.7.21.classpath"/>
+    <path refid="library.jfoenix.classpath"/>
+    <path refid="library.j2mod-2.3.3.classpath"/>
+    <path refid="library.fontawesomefx.classpath"/>
+    <path refid="library.javolution-core-java-6.0.0.classpath"/>
+  </path>
+  
+  <path id="modbustcp.runtime.module.classpath">
+    <pathelement location="${modbustcp.testoutput.dir}"/>
+    <pathelement location="${modbustcp.output.dir}"/>
+    <path refid="library.derbyembeddeddb.classpath"/>
+    <path refid="library.poi.classpath"/>
+    <path refid="library.slf4j-api-1.7.21.classpath"/>
+    <path refid="library.jfoenix.classpath"/>
+    <path refid="library.j2mod-2.3.3.classpath"/>
+    <path refid="library.fontawesomefx.classpath"/>
+    <path refid="library.javolution-core-java-6.0.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.modbustcp">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.modbustcp">
+    <patternset refid="excluded.from.module.modbustcp"/>
+  </patternset>
+  
+  <path id="modbustcp.module.sourcepath">
+    <dirset dir="${module.modbustcp.basedir}">
+      <include name="src"/>
+      <include name="Resources"/>
+      <include name="icons"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.modbustcp" depends="compile.module.modbustcp.production,compile.module.modbustcp.tests" description="Compile module ModbusTcp"/>
+  
+  <target name="compile.module.modbustcp.production" depends="register.custom.compilers" description="Compile module ModbusTcp; production classes">
+    <mkdir dir="${modbustcp.output.dir}"/>
+    <javac2 destdir="${modbustcp.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.modbustcp}/javac">
+      <compilerarg line="${compiler.args.modbustcp}"/>
+      <bootclasspath refid="modbustcp.module.bootclasspath"/>
+      <classpath refid="modbustcp.module.production.classpath"/>
+      <src refid="modbustcp.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.modbustcp"/>
+    </javac2>
+    
+    <copy todir="${modbustcp.output.dir}">
+      <fileset dir="${module.modbustcp.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.modbustcp.basedir}/Resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.modbustcp.basedir}/icons">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.modbustcp.tests" depends="register.custom.compilers,compile.module.modbustcp.production" description="compile module ModbusTcp; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.modbustcp" description="cleanup module">
+    <delete dir="${modbustcp.output.dir}"/>
+    <delete dir="${modbustcp.testoutput.dir}"/>
+  </target>
+</project>

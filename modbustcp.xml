@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="modbustcp" default="all">
+  
+  
+  <property file="modbustcp.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*.yarb/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.ear"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+  </patternset>
+  
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+      <include name="lib/ant-javafx.jar"/>
+      <include name="lib/dt.jar"/>
+      <include name="lib/javafx-mx.jar"/>
+      <include name="lib/jconsole.jar"/>
+      <include name="lib/packager.jar"/>
+      <include name="lib/sa-jdi.jar"/>
+      <include name="lib/tools.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
+  
+  
+  <!-- Global Libraries -->
+  
+  <path id="library.derbyembeddeddb.classpath">
+    <pathelement location="/Users/a2d/JAR_Libraries/db-derby-10.11.1.1-bin/lib/derby.jar"/>
+  </path>
+  
+  <path id="library.fontawesomefx.classpath">
+    <fileset dir="/Users/a2d/JAR_Libraries/fontawesomefx">
+      <patternset refid="library.patterns"/>
+    </fileset>
+  </path>
+  
+  <path id="library.j2mod-2.3.3.classpath">
+    <pathelement location="/Users/a2d/JAR_Libraries/javaModbusLibrarys/j2mod-2.33/j2mod-2.3.3.jar"/>
+  </path>
+  
+  <path id="library.javolution-core-java-6.0.0.classpath">
+    <pathelement location="/Users/a2d/JAR_Libraries/javolution/javolution-core-java-6.0.0.jar"/>
+  </path>
+  
+  <path id="library.jfoenix.classpath">
+    <pathelement location="/Users/a2d/JAR_Libraries/jFoenix/jfoenix.jar"/>
+  </path>
+  
+  <path id="library.poi.classpath">
+    <fileset dir="/Users/a2d/JAR_Libraries/poi-3.16/lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+    <fileset dir="/Users/a2d/JAR_Libraries/poi-3.16/ooxml-lib">
+      <patternset refid="library.patterns"/>
+    </fileset>
+    <pathelement location="/Users/a2d/JAR_Libraries/poi-3.16/poi-3.16.jar"/>
+    <pathelement location="/Users/a2d/JAR_Libraries/poi-3.16/poi-examples-3.16.jar"/>
+    <pathelement location="/Users/a2d/JAR_Libraries/poi-3.16/poi-excelant-3.16.jar"/>
+    <pathelement location="/Users/a2d/JAR_Libraries/poi-3.16/poi-ooxml-3.16.jar"/>
+    <pathelement location="/Users/a2d/JAR_Libraries/poi-3.16/poi-ooxml-schemas-3.16.jar"/>
+    <pathelement location="/Users/a2d/JAR_Libraries/poi-3.16/poi-scratchpad-3.16.jar"/>
+  </path>
+  
+  <path id="library.slf4j-api-1.7.21.classpath">
+    <pathelement location="/Users/a2d/JAR_Libraries/slf4j logging framework/slf4j-api-1.7.21.jar"/>
+    <pathelement location="/Users/a2d/JAR_Libraries/slf4j logging framework/slf4j-simple-1.8.0-alpha2.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  <import file="${basedir}/module_modbustcp.xml"/>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.modbustcp, clean.artifact.libraapp" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.modbustcp" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.libraapp" value="${basedir}/out/artifacts/LibraApp"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="artifact.temp.output.JavaFXApp" value="${artifacts.temp.dir}/JavaFXApp.jar"/>
+    <taskdef resource="com/sun/javafx/tools/ant/antlib.xml" uri="javafx:com.sun.javafx.tools.ant" classpath="${jdk.home.1.8}/lib/ant-javafx.jar"/>
+  </target>
+  
+  <target name="clean.artifact.libraapp" description="clean LibraApp artifact output">
+    <delete dir="${artifact.output.libraapp}"/>
+  </target>
+  
+  <target name="artifact.libraapp" depends="init.artifacts, compile.module.modbustcp" description="Build &#39;LibraApp&#39; artifact" xmlns:fx="javafx:com.sun.javafx.tools.ant">
+    <mkdir dir="${artifact.output.libraapp}"/>
+    <copy todir="${artifact.temp.output.JavaFXApp}">
+      <fileset dir="${modbustcp.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.temp.output.JavaFXApp}/META-INF"/>
+    <copy file="${basedir}/META-INF/MANIFEST.MF" tofile="${artifact.temp.output.JavaFXApp}/META-INF/MANIFEST.MF"/>
+    <mkdir dir="${artifact.temp.output.JavaFXApp}/Libraries"/>
+    <copy file="${basedir}/../../JAR_Libraries/javaModbusLibrarys/j2mod-2.33/j2mod-2.3.3.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/j2mod-2.3.3.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/poi-3.16.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/poi-3.16.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/poi-examples-3.16.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/poi-examples-3.16.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/poi-excelant-3.16.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/poi-excelant-3.16.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/poi-ooxml-3.16.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/poi-ooxml-3.16.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/poi-ooxml-schemas-3.16.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/poi-ooxml-schemas-3.16.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/poi-scratchpad-3.16.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/poi-scratchpad-3.16.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/lib/junit-4.12.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/junit-4.12.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/lib/log4j-1.2.17.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/log4j-1.2.17.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/lib/commons-codec-1.10.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/commons-codec-1.10.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/lib/commons-logging-1.2.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/commons-logging-1.2.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/lib/commons-collections4-4.1.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/commons-collections4-4.1.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/ooxml-lib/curvesapi-1.04.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/curvesapi-1.04.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/poi-3.16/ooxml-lib/xmlbeans-2.6.0.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/xmlbeans-2.6.0.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/fontawesomefx/fontawesomefx-8.9.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/fontawesomefx-8.9.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/slf4j logging framework/slf4j-api-1.7.21.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/slf4j-api-1.7.21.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/slf4j logging framework/slf4j-simple-1.8.0-alpha2.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/slf4j-simple-1.8.0-alpha2.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/db-derby-10.11.1.1-bin/lib/derby.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/derby.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/javolution/javolution-core-java-6.0.0.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/javolution-core-java-6.0.0.jar"/>
+    <copy file="${basedir}/../../JAR_Libraries/jFoenix/jfoenix.jar" tofile="${artifact.temp.output.JavaFXApp}/Libraries/jfoenix.jar"/>
+    <mkdir dir="${artifact.temp.output.JavaFXApp}/Resources"/>
+    <copy todir="${artifact.temp.output.JavaFXApp}/Resources">
+      <fileset dir="${basedir}/Resources"/>
+    </copy>
+    <fx:fileset id="all_but_JavaFXApp" dir="${artifact.temp.output.JavaFXApp}" includes="**/*.jar">
+      <exclude name="JavaFXApp.jar"/>
+    </fx:fileset>
+    <fx:fileset id="all_JavaFXApp" dir="${artifact.temp.output.JavaFXApp}" includes="**/*.jar"/>
+    <fx:application id="JavaFXApp_id" name="LibraApp" mainClass="Main"/>
+    <fx:jar destfile="${artifact.temp.output.JavaFXApp}/JavaFXApp.jar">
+      <fx:application refid="JavaFXApp_id"/>
+      <fileset dir="${artifact.temp.output.JavaFXApp}" excludes="**/*.jar"/>
+      <fx:resources>
+        <fx:fileset refid="all_but_JavaFXApp"/>
+      </fx:resources>
+      <manifest>
+        <attribute name="Implementation-Title" value="Libra - Weight Heads Modbus Tcp"/>
+        <attribute name="Implementation-Version" value=""/>
+        <attribute name="Implementation-Vendor" value="Libra - By Arik Albukrek"/>
+      </manifest>
+    </fx:jar>
+    <condition property="app.icon.path" value="${basedir}/icons/libra.icns">
+      <os family="mac"/>
+    </condition>
+    <fx:deploy width="684" height="406" updatemode="background" outdir="${artifact.temp.output.JavaFXApp}/deploy" outfile="JavaFXApp" nativeBundles="dmg">
+      <fx:application refid="JavaFXApp_id"/>
+      <fx:info title="Libra - Weight Heads Modbus Tcp" vendor="Libra - By Arik Albukrek" description="This Application is for private use.  Weight Heads Modbus Tcp  reads and writes to slaves (Weight Heads) as needed.">
+        <fx:icon href="${app.icon.path}"/>
+      </fx:info>
+      <fx:resources>
+        <fx:fileset refid="all_JavaFXApp"/>
+      </fx:resources>
+    </fx:deploy>
+    <copy todir="${artifact.output.libraapp}">
+      <fileset dir="${artifact.temp.output.JavaFXApp}/deploy"/>
+    </copy>
+    <delete includeemptydirs="true">
+      <fileset dir="${artifact.temp.output.JavaFXApp}"/>
+    </delete>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.libraapp" description="Build all artifacts">
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>

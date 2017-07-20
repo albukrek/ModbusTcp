@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Thu Jul 20 23:45:23 IDT 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-015d-61bf-757d-00000c4c5600 
+on database directory /Users/a2d/IdeaProjects/TestModbusTcp/ModbusTcp/Resources/WeightDB with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/Users/a2d/JAR_Libraries/db-derby-10.11.1.1-bin/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_152-ea-b01
+user.dir=/Users/a2d/IdeaProjects/TestModbusTcp/ModbusTcp
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.12.5
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

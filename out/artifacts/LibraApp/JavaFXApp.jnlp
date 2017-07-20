@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFXApp.jnlp">
+  <information>
+    <title>Libra - Weight Heads Modbus Tcp</title>
+    <vendor>Libra - By Arik Albukrek</vendor>
+    <description>This Application is for private use.  Weight Heads Modbus Tcp  reads and writes to slaves (Weight Heads) as needed.</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFXApp.jar" size="117932" download="eager" />
+    <jar href="Libraries/commons-codec-1.10.jar" size="284184" download="eager" />
+    <jar href="Libraries/commons-collections4-4.1.jar" size="751238" download="eager" />
+    <jar href="Libraries/commons-logging-1.2.jar" size="61829" download="eager" />
+    <jar href="Libraries/curvesapi-1.04.jar" size="98365" download="eager" />
+    <jar href="Libraries/derby.jar" size="3103132" download="eager" />
+    <jar href="Libraries/fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="Libraries/j2mod-2.3.3.jar" size="192912" download="eager" />
+    <jar href="Libraries/javolution-core-java-6.0.0.jar" size="412956" download="eager" />
+    <jar href="Libraries/jfoenix.jar" size="2386350" download="eager" />
+    <jar href="Libraries/junit-4.12.jar" size="314932" download="eager" />
+    <jar href="Libraries/log4j-1.2.17.jar" size="489884" download="eager" />
+    <jar href="Libraries/poi-3.16.jar" size="2679259" download="eager" />
+    <jar href="Libraries/poi-examples-3.16.jar" size="369786" download="eager" />
+    <jar href="Libraries/poi-excelant-3.16.jar" size="31218" download="eager" />
+    <jar href="Libraries/poi-ooxml-3.16.jar" size="1433719" download="eager" />
+    <jar href="Libraries/poi-ooxml-schemas-3.16.jar" size="5871746" download="eager" />
+    <jar href="Libraries/poi-scratchpad-3.16.jar" size="1384931" download="eager" />
+    <jar href="Libraries/slf4j-api-1.7.21.jar" size="41071" download="eager" />
+    <jar href="Libraries/slf4j-simple-1.8.0-alpha2.jar" size="17205" download="eager" />
+    <jar href="Libraries/xmlbeans-2.6.0.jar" size="2730866" download="eager" />
+  </resources>
+  <jfx:javafx-desc  width="684" height="406" main-class="Main"  name="LibraApp" />
+  <update check="background"/>
+</jnlp>

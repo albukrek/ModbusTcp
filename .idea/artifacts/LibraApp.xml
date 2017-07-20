@@ -1,0 +1,40 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="LibraApp">
+    <output-path>$PROJECT_DIR$/out/artifacts/LibraApp</output-path>
+    <properties id="javafx-properties">
+      <options>
+        <option name="appClass" value="Main" />
+        <option name="description" value="This Application is for private use.  Weight Heads Modbus Tcp  reads and writes to slaves (Weight Heads) as needed." />
+        <option name="height" value="406" />
+        <option name="htmlPlaceholderId" value="" />
+        <option name="icons">
+          <JavaFxApplicationIcons>
+            <option name="macIcon" value="$PROJECT_DIR$/icons/libra.icns" />
+          </JavaFxApplicationIcons>
+        </option>
+        <option name="nativeBundle" value="dmg" />
+        <option name="title" value="Libra - Weight Heads Modbus Tcp" />
+        <option name="vendor" value="Libra - By Arik Albukrek" />
+        <option name="version" value="" />
+        <option name="width" value="684" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="JavaFXApp.jar">
+        <element id="module-output" name="ModbusTcp" />
+        <element id="directory" name="META-INF">
+          <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+        </element>
+      </element>
+      <element id="directory" name="Libraries">
+        <element id="library" level="application" name="j2mod-2.3.3" />
+        <element id="library" level="application" name="poi" />
+        <element id="library" level="application" name="fontawesomefx" />
+        <element id="library" level="application" name="slf4j-api-1.7.21" />
+        <element id="library" level="application" name="derbyEmbeddedDB" />
+        <element id="library" level="application" name="javolution-core-java-6.0.0" />
+        <element id="library" level="application" name="jFoenix" />
+      </element>
+    </root>
+  </artifact>
+</component>

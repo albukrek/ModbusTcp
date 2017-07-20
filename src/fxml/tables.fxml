@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="406.0" prefWidth="684.0" style="-fx-background-color: gray;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.TablesController">
+   <children>
+      <VBox layoutX="130.0" layoutY="63.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="11.0">
+         <children>
+            <SplitPane dividerPositions="0.29797979797979796" prefHeight="346.0" prefWidth="662.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: white;">
+                     <children>
+                        <ListView fx:id="tableList" layoutY="44.0" onMouseClicked="#getTable" style="-fx-border-color: white;" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="44.0" />
+                        <JFXButton buttonType="RAISED" defaultButton="true" onAction="#exportToExcel" prefHeight="27.0" prefWidth="78.0" ripplerFill="#030303" style="-fx-background-color: BLUE;" text="Export " textAlignment="CENTER" textFill="#f5f4f4" wrapText="true" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="7.0">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton buttonType="RAISED" contentDisplay="CENTER" defaultButton="true" ellipsisString="" layoutX="93.0" layoutY="18.0" onAction="#loadDataFromDatabase" prefHeight="27.0" prefWidth="78.0" ripplerFill="#313633" style="-fx-background-color: GREEN;" text="Update " textAlignment="CENTER" textFill="#f5f4f4" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="7.0">
+                           <font>
+                              <Font name="Arial Bold" size="13.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="344.0" prefWidth="145.0" style="-fx-background-color: white;">
+                     <children>
+                        <StackPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <TableView fx:id="tableWeightTotal">
+                                 <columns>
+                                    <TableColumn fx:id="colWeightId" editable="false" prefWidth="75.0" text="Weight Id" />
+                                    <TableColumn fx:id="colTotal" editable="false" prefWidth="151.0" text="Total" />
+                                    <TableColumn fx:id="colTimestamp" editable="false" prefWidth="201.0" text="Timestamp" />
+                                 </columns>
+                              </TableView>
+                              <TableView fx:id="table2" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="Table2" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                 </columns>
+                              </TableView>
+                              <TableView fx:id="table3" prefHeight="200.0" prefWidth="200.0" visible="false">
+                                 <columns>
+                                    <TableColumn prefWidth="75.0" text="Table3" />
+                                    <TableColumn prefWidth="75.0" text="C2" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </StackPane>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+            <HBox alignment="TOP_RIGHT" spacing="5.0" style="-fx-background-color: lightgrey; -fx-border-color: black lightgrey lightgrey lightgrey; -fx-border-width: 2;">
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="15.0" top="3.0" />
+               </padding>
+               <children>
+                  <JFXButton layoutX="391.0" layoutY="15.0" onAction="#goToMain" prefHeight="27.0" prefWidth="78.0" ripplerFill="#030303" style="-fx-background-color: lightgray;" text="d" textFill="#f5f4f4">
+                     <font>
+                        <Font name="Arial Bold" size="1.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="HOME" scaleX="1.8" size="26" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton buttonType="RAISED" defaultButton="true" onAction="#appExit" prefHeight="27.0" prefWidth="78.0" ripplerFill="#614343" style="-fx-background-color: RED;" text="Exit" textFill="#f5f4f4">
+                     <font>
+                        <Font name="Arial Bold" size="13.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </JFXButton>
+                  <Region prefHeight="27.0" prefWidth="78.0" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children>
+      </VBox>
+      <ImageView fitHeight="111.0" fitWidth="114.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="11.0">
+         <image>
+            <Image url="@libra.png" />
+         </image>
+         <viewport>
+            <Rectangle2D minX="122.0" minY="122.0" />
+         </viewport>
+      </ImageView>
+   </children>
+</AnchorPane>

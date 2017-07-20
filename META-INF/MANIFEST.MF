@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Class-Path: /Users/a2d/IdeaProjects/ModbusTcp/
+Main-Class: Main
+
